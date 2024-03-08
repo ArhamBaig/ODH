@@ -2,6 +2,80 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+
+.sidebar-hidden {
+	transform: translateX(100%);
+	opacity: 0;
+	pointer-events: none;
+  }
+  
+  .sidebar-visible {
+	transform: translateX(0);
+	opacity: 1;
+	pointer-events: auto;
+  }
+  
+  /* Apply hover color only to immediate child <a> elements */
+  .sidebar-subdropdown > li > a:hover {
+	color: rgb(251 146 60);
+  }
+  
+  /* Apply hover color only to immediate child <a> elements of nested submenu */
+  .sidebar-subdropdown > li > ul > li > a:hover {
+	color: rgb(251 146 60);
+  }
+  
+  .sidebar-subdropdown li a {
+	color: inherit;
+	text-decoration: none;
+	display: block;
+  }
+  
+  .sidebar-subdropdown li {
+	transition: background-color 0.3s;
+  }
+  
+  .sidebar-subdropdown li:hover {
+	background-color: #1e293b; /* Apply your hover background color here */
+  }
+  
+  .sidebar-visible li > .sidebar-subdropdown{
+  
+	animation: slidedown .3s;
+  }
+  /* Add this to your CSS file */
+  .group {
+	transition-property: all;
+	transition-duration: 0.3s; /* Adjust the duration as needed */
+	transition-timing-function: ease-in-out; /* Adjust the timing function as needed */
+  }
+  
+  
+  .dropdown {
+	opacity: 0;
+	height: 0px;
+	transform: translateY(-10%);
+	padding:0px;
+	transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out, height 0.2s ease-in-out, padding 0.2 ease-in-out;
+  }
+  
+  .dropdown-enter {
+	opacity: 1;
+	height: 500px;
+	padding:40px;
+	transform: translateY(0%);
+  }
+  
+  .dropdown-exit {
+	opacity: 0;
+	height: 0px;
+	padding:0px;
+	transform: translateY(-10%);
+  }
+  
+
 .glass{
 /* From https://css.glass */
 background: rgba(255, 255, 255, 0.32);
@@ -18,29 +92,7 @@ border: 1px solid rgba(255, 255, 255, 0.47);
 
   .heading {
     
-    @apply relative z-10  text-center w-[60vw] lg:w-fit font-bold text-2xl lg:text-4xl uppercase   mx-auto py-2
-}
-
-.heading::before {
-    content: "";
-    position: absolute;
-    width: 20%;
-    height: 80%;
-    border-color: #f9cb50;
-    border-width: 2px 0 0 2px; /* Top: 0, Right: 10px, Bottom: 10px, Left: 0 */
-    border-style: solid;
-@apply top-[-30px] left-[-30px] -z-30
-}
-
-.heading::after{
-    content: "";
-    position: absolute;
-    width: 20%;
-    height: 80%;
-    border-color: #f9cb50;
-    border-width: 0 2px 2px 0; /* Top: 0, Right: 10px, Bottom: 10px, Left: 0 */
-    border-style: solid;
-    @apply bottom-[-30px] right-[-30px] -z-30
+    @apply relative z-10  text-center w-[60vw] lg:w-[80%] font-bold text-2xl lg:text-4xl uppercase mx-auto 
 }
 
 :root {
@@ -79,7 +131,7 @@ border: 1px solid rgba(255, 255, 255, 0.47);
 
 .card {
 	position: sticky;
-	top: 0;
+	top: 120px;
 	padding-top: calc(var(--index) * var(--cardTopPadding));
 }
 
@@ -103,5 +155,51 @@ border: 1px solid rgba(255, 255, 255, 0.47);
 .card-body {
 	box-sizing: border-box;
 	box-shadow: 0 0 30px 0 rgba(0,0,0,0.3);
-    @apply p-4 rounded-2xl  transition-all w-[300px] sm:w-[400px] md:w-[450px] h-[300px]
+    @apply p-3 sm:p-4 rounded-2xl  transition-all w-[300px] sm:w-[400px] md:w-[450px] h-[300px]
+}
+
+.bubble-hover {
+    position: relative;
+    overflow: hidden;
+}
+
+.bubble-hover::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 0;
+    height: 300%;
+    transition: width 0.4s ease-out, height 0.4s ease-out, top 0.4s ease-out, left 0.4s ease-out;
+    z-index: -1;
+    border-radius: 9999px;
+    @apply bg-tertiary 
+  }
+
+  .bubble-hover:hover::before {
+    width: 300%;
+    height: 300%;
+    top: -100%;
+    left: -100%;
+
+}
+
+.scrollable-container {
+  max-height: 620px; /* Set your desired height */
+  overflow-y: scroll; /* Enable vertical scrolling */
+  scrollbar-width: thin; 
+  scrollbar-color: #f27220 transparent;
+  @apply max-w-2xl /* Set the scrollbar color (optional) */
+
+}
+
+/* For Webkit browsers (Chrome, Safari) */
+.scrollable-container::-webkit-scrollbar {
+  width: 2px;
+
+   /* Set the scrollbar width (optional) */
+}
+
+.scrollable-container::-webkit-scrollbar-thumb {
+  background-color: gray; /* Set the thumb color to be transparent */
 }

@@ -10,8 +10,8 @@ const SecondComponent = () => {
       </div>
       <h2 className="heading mx-auto mb-16">Are You Looking For Thesis Help Online</h2>
 
-    <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center px-10 -z-10">
-      <div className="flex flex-col gap-y-5 px-10 w-fit max-w-[900px] mx-auto ">
+    <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center md:px-10 -z-10">
+      <div className="flex flex-col gap-y-5 px-3 sm:px-10 w-fit max-w-[900px] mx-auto text-sm sm:text-base">
         <div className="">
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti,

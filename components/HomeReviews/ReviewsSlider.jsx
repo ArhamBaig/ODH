@@ -2,7 +2,7 @@
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
+import {Star} from "lucide-react"
 const ReviewsSlider = () => {
     const settings = {
         dots: false,
@@ -15,12 +15,29 @@ const ReviewsSlider = () => {
         cssEase: "linear",
         arrows: false,
         draggable: false,
-        pauseOnHover: false,
+        pauseOnHover: true,
         vertical: true,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                    vertical: false,
+                    slidesToShow: 2,
+                }
+            },
+            {
+                breakpoint: 640,
+                settings: {
+                    vertical: false,
+                    slidesToShow: 1,
+                }
+            }
+        ]
       };
 
   return (
-    <Slider {...settings}>
+    <div className="order-last lg:order-first z-20">
+    <Slider {...settings} >
         <Review heading={"LoREM IPSUM HEADING"} desc= {<>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos perspiciatis corrupti nam nemo. Saepe atque laudantium corporis placeat. Aliquid modi nostrum aut molestias unde natus quae obcaecati hic sunt repellendus.</>} />
         <Review heading={"LoREM IPSUM HEADING"} desc= {<>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos perspiciatis corrupti nam nemo. Saepe atque laudantium corporis placeat. Aliquid modi nostrum aut molestias unde natus quae obcaecati hic sunt repellendus.</>} />
         <Review heading={"LoREM IPSUM HEADING"} desc= {<>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos perspiciatis corrupti nam nemo. Saepe atque laudantium corporis placeat. Aliquid modi nostrum aut molestias unde natus quae obcaecati hic sunt repellendus.</>} />
@@ -28,16 +45,23 @@ const ReviewsSlider = () => {
         <Review heading={"LoREM IPSUM HEADING"} desc= {<>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos perspiciatis corrupti nam nemo. Saepe atque laudantium corporis placeat. Aliquid modi nostrum aut molestias unde natus quae obcaecati hic sunt repellendus.</>} />
 
     </Slider>
+    </div>
   )
 }
 
 const Review = ({heading, desc}) => {
     return(
 
-        <div className="rounded-xl p-8  bg-gradient-to-b from-gray-100 to-gray-200 shadow-xl my-4 max-w-xl mx-auto h-[240px]">
-            <p className="text-4xl font-bold mb-4">{heading}</p>
-            
-            <p>{desc}</p>
+        <div className="rounded-xl p-4 lg:p-8  bg-gradient-to-b from-gray-100 to-gray-200 mx-4 my-0 lg:my-4 max-w-xl lg:mx-auto h-[200px] sm:h-[240px]">
+            <p className="text-xl md:text-2xl lg:text-3xl font-bold mb-1 lg:mb-3">{heading}</p>
+            <div className="flex gap-x-1 mb-1">
+            <Star className="text-secondary " fill="#f9cb50" />
+            <Star className="text-secondary " fill="#f9cb50" />
+            <Star className="text-secondary " fill="#f9cb50" />
+            <Star className="text-secondary " fill="#f9cb50" />
+            <Star className="text-secondary " fill="#f9cb50" />
+            </div>
+            <p className="text-sm lg:text-base lg:line-clamp-4">{desc}</p>
         </div>
     )
 }

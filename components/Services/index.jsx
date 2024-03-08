@@ -1,9 +1,10 @@
 
 import { HoverEffect } from "../ui/card-hover-effect";
 
-const DissertationSteps = () => {
+const Services = () => {
   return (
-    <div className="max-w-5xl mx-auto px-8">
+    <div className="max-w-7xl mx-auto px-8">
+      <h2 className="font-bold text-5xl">Our <span className="text-secondary">Expertise</span></h2>
       <HoverEffect items={projects} />
     </div>
   )
@@ -119,4 +120,4 @@ export const projects = [
     link: "https://microsoft.com",
   },
 ];
-export default DissertationSteps
+export default Services

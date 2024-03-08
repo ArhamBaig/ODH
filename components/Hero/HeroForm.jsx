@@ -66,8 +66,8 @@ const HeroForm = () => {
   };
   return (
     <ThemeProvider theme={theme}>
-      <div className="glass bg-white/40 rounded-3xl w-[480px] mx-auto h-[560px]">
-        <div className="flex flex-col justify-between items-center md:px-16  h-full py-20">
+      <div className="glass bg-white/40 rounded-3xl w-[340px] sm:w-[400px] mx-auto h-[450px] mt-4 lg:mt-0">
+        <div className="flex flex-col justify-between items-center md:px-16  h-full py-6">
           <p className="text-3xl font-bold text-white mb-7 whitespace-nowrap">
             FREE <span className="text-secondary">CONSULTATION</span>
           </p>
@@ -97,7 +97,7 @@ const HeroForm = () => {
               onChange={(value) => handleInputChange("phoneNumber", value)}
               required
             />
-            <button className="bg-white text-primary p-3 px-6 rounded-lg  font-semibold mt-20 hover:opacity-80 transition-all">
+            <button className="bg-white text-primary p-3 px-6 rounded-lg mt-auto font-semibold  hover:opacity-80 transition-all">
               Submit
             </button>
           </form>

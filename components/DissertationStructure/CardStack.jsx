@@ -21,8 +21,8 @@ const Card = ({ id, heading, desc }) => {
   return (
     <li className='card ' id={id} >
       <div className='card-body'>
-        <h3 className='font-bold text-3xl'>{heading}</h3>
-        <p className='mt-4 opacity-75'>{desc}</p>
+        <h3 className='font-bold text-xl sm:text-2xl md:text-3xl'>{heading}</h3>
+        <p className='mt-4 opacity-75 text-xm md:text-base'>{desc}</p>
       </div>
     </li>
   );

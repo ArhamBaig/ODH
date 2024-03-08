@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import { Menu, X, ChevronDown, ChevronUp, ChevronRight } from "lucide-react";
 import { navLinks } from "@/constants/navLinks";
 import Image from "next/image";
 import Link from "next/link";
@@ -51,92 +52,65 @@ const Navbar = () => {
     <>
       <div className="z-40 text-black fixed select-none ">
         <div className="flex justify-between lg:justify-center items-center w-screen lg:h-[120px] whitespace-nowrap px-3  bg-white relative shadow-md">
-            <Link href="/" >
-              {" "}
-              <Image
-                className=" w-[180px] mr-10 p-1"
-                alt="Go to home"
-                src={logo}
-              />
-            </Link>
-            <ul className=" hidden lg:flex  gap-10 lg:gap-12 pt-5  items-center ">
-              {navLinks.map((link) => (
-                <li
-                  className="flex cursor-default relative "
-                  key={link.title}
-                  onClick={
-                    link.dropdown
-                      ? handleMouseClickLi(link)
-                      : handleMouseClickLowerDiv("")
-                  }
-                >
-                  {link.href ? (
-                    <Link href={link.href}>{link.title}</Link>
-                  ) : (
-                    link.title
-                  )}
-                  {link.dropdown && (
-                    <Image
-                      src={arrowdown}
-                      height={15}
-                      width={15}
-                      alt="navbar dropdown arrow"
-                      className={`ml-2 transition-transform transform ${
-                        liActive === link.title ? "rotate-180" : "rotate-0"
-                      }`}
-                    />
-                  )}
-                </li>
-              ))}
-            </ul>
-            <div className="flex gap-x-5 justify-center items-center">
-              <div className="lg:hidden flex  px-8 mt-2 z-30 ">
-                <Image
-                  src={menu}
-                  alt="menu"
-                  className="w-[28px] h-[28px] object-contain cursor-pointer"
-                  onClick={() => setSidebarToggle(!sidebarToggle)}
-                />
-              </div>
-              <div className="xl:flex flex-col hidden pt-5 justify-center items-center gap-x-2">
-                <Link className="flex items-start justify-start gap-x-2 ml-6" href={"/reviews"}>
-                  <div className="bg-[#2bbad4] rounded-lg text-white  p-2">
-                    4.8/5
-                  </div>
-                  <div className="flex-col">
-                    <Image alt="rating stars image" src={stars} />
-                    <p className="font-bold tracking-wide pl-1">Reviews</p>
-                  </div>
-                </Link>
-              </div>
-              <div className="hidden 2xl:block flex-col pt-5">
-                <div className="flex gap-x-3">
-                  <Image
-                    src={bphone}
-                    width={20}
-                    height={20}
-                    alt="Phone Number"
+          <Link href="/">
+            <Image
+              className=" w-[180px] mr-10 p-1"
+              alt="Go to home"
+              width={180}
+              height={90}
+              src={"/assets/logo.png"}
+            />
+          </Link>
+          <ul className=" hidden lg:flex  gap-10 lg:gap-12 items-center ">
+            {navLinks.map((link) => (
+              <li
+                className="flex cursor-default relative justify-center items-center"
+                key={link.title}
+                onClick={
+                  link.dropdown
+                    ? handleMouseClickLi(link)
+                    : handleMouseClickLowerDiv("")
+                }
+              >
+                {link.href ? (
+                  <Link href={link.href}>{link.title}</Link>
+                ) : (
+                  link.title
+                )}
+                {link.dropdown && (
+                  <ChevronDown
+                    className={`ml-2 transition-transform transform w-5 h-5 ${
+                      liActive === link.title ? "rotate-180" : "rotate-0"
+                    }`}
                   />
-                  <Link href="tel:+447378479699" >
-                    <p className="font-bold">+44 7378 479699</p>
-                  </Link>
-                </div>
-              </div>
+                )}
+              </li>
+            ))}
+          </ul>
+          <div className="flex gap-x-5 justify-center items-center">
+            <div className="lg:hidden flex  px-8 mt-2 z-30 ">
+              <Menu
+                className="w-[28px] h-[28px] object-contain cursor-pointer"
+                onClick={() => setSidebarToggle(!sidebarToggle)}
+              />
             </div>
-            <Link className="bg-secondary rounded-lg p-2 hidden  lg:block mt-4 ml-5" href="/order">
+          </div>
+          <Link
+            className="bg-secondary rounded-lg p-2 hidden  lg:block mt-4 ml-5"
+            href="/order"
+          >
             ORDER NOW
           </Link>
-       
         </div>
 
         <div
           className={`dropdown absolute left-[0%] xl:left-[8%] 2xl:left-[11%] flex justify-center duration-300 mx-auto w-[100vw] xl:w-[85vw] 2xl:w-[70vw] bg-gradient-to-b bg-white rounded-b-lg shadow-lg
-         transition-all ease-in-out  
-        ${
-          liActive === "Services" || liActive === "Countries"
-            ? "dropdown-enter"
-            : "dropdown-exit"
-        }`}
+           transition-all ease-in-out  
+          ${
+            liActive === "Services" || liActive === "Countries"
+              ? "dropdown-enter"
+              : "dropdown-exit"
+          }`}
         >
           {navLinks.map((link) =>
             Array.isArray(link.dropdown) &&
@@ -147,7 +121,7 @@ const Navbar = () => {
                   <Link
                     href={subLink?.href}
                     key={subLink.title}
-                    className={`p-2 pr-20 flex justify-between group hover:bg-black/10 transition-all duration-300 rounded-md ${
+                    className={`p-2 pr-20 flex items-center justify-between group hover:bg-black/10 transition-all duration-300 rounded-md ${
                       subLink.title === subLiActive ? "bg-black/10" : ""
                     }`}
                     onMouseEnter={() => setSubLiActive(subLink.title)}
@@ -158,17 +132,12 @@ const Navbar = () => {
                     </li>
 
                     {subLink.subdropdown && (
-                      <Image
-                        src={arrowdown}
-                        height={10}
-                        width={10}
-                        className={`transition-all -rotate-90 duration-700 opacity-0 group-hover:opacity-100
-                        ${
+                      <ChevronRight
+                        className={`h-5 w-5 transition-all duration-700 opacity-0 group-hover:opacity-100 ${
                           subLiActive === subLink.title
                             ? "translate-x-10 opacity-100"
                             : ""
                         }`}
-                        alt="navbar dropdown arrow"
                       />
                     )}
                   </Link>
@@ -228,17 +197,12 @@ const Navbar = () => {
         <div
           className={`${
             sidebarToggle ? "sidebar-visible" : "sidebar-hidden"
-          } p-6 bg-gradient-to-b from-primary to-[#457ab6] text-white right-0 top-0 h-full w-full fixed z-40 transition-all`}
+          } p-6 bg-gradient-to-b from-primary to-tertiary text-white right-0 top-0 h-full w-full fixed z-40 transition-all`}
         >
-          {/* Close Button inside Sidebar */}
           <div className="relative flex justify-between pt-2">
             <h2 className="px-3 py-10 text-2xl"></h2>
-            <Image
-              src={close}
-              alt="Close menu"
-              width={28}
-              height={28}
-              className=" object-contain cursor-pointer"
+            <X
+              className="h-7 w-7 object-contain cursor-pointer"
               onClick={() => setSidebarToggle(!sidebarToggle)}
             />
           </div>
@@ -249,27 +213,23 @@ const Navbar = () => {
                   {/* link.href goes here */}
                   <Link
                     href="#"
-                    className="flex justify-between bg-[#3669a3]  rounded-sm"
+                    className="flex justify-between bg-tertiary  rounded-sm"
                   >
                     <p className="py-1 px-2">{link.title}</p>
                     {link.dropdown && (
                       <div
-                        className="px-2 flex justify-center items-center rounded-r-sm bg-[#1f4775]"
+                        className="px-2 flex justify-center items-center rounded-r-sm bg-gray-800"
                         onClick={() =>
                           setSidebarLiActive((prev) =>
                             prev === link.title ? "" : link.title
                           )
                         }
                       >
-                        <Image
-                          className="transition-all"
-                          alt="Arrow image for dropdown"
-                          src={
-                            sidebarLiActive === link.title ? arrowUp : arrowdown
-                          }
-                          height={16}
-                          width={16}
-                        />{" "}
+                        {sidebarLiActive === link.title ? (
+                          <ChevronUp className="h-4 w-4" />
+                        ) : (
+                          <ChevronDown className="h-4 w-4" />
+                        )}
                       </div>
                     )}
                   </Link>
@@ -288,13 +248,13 @@ const Navbar = () => {
                             className="py-1 mx-2  cursor-pointer"
                           >
                             <Link
-                              className={`flex justify-between bg-[#3669a3]  rounded-sm `}
+                              className={`flex justify-between bg-tertiary  rounded-sm `}
                               href="#"
                             >
                               <p className="py-[2px] px-2">{subLink.title}</p>
                               {subLink.subdropdown && (
                                 <div
-                                  className="px-2 flex justify-center items-center rounded-r-sm bg-[#1f4775]"
+                                  className="px-2 flex justify-center items-center rounded-r-sm bg-gray-800"
                                   onClick={() =>
                                     setSidebarSubLiActive((prev) =>
                                       prev === subLink.title
@@ -303,17 +263,11 @@ const Navbar = () => {
                                     )
                                   }
                                 >
-                                  <Image
-                                    className="transition-all"
-                                    alt="Arrow image for dropdown"
-                                    src={
-                                      sidebarSubLiActive === subLink.title
-                                        ? arrowUp
-                                        : arrowdown
-                                    }
-                                    height={15}
-                                    width={15}
-                                  />
+                                  {sidebarSubLiActive === subLink.title ? (
+                                    <ChevronUp className="h-4 w-4" />
+                                  ) : (
+                                    <ChevronDown className="h-4 w-4" />
+                                  )}
                                 </div>
                               )}
                             </Link>
