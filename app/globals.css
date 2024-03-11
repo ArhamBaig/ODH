@@ -203,3 +203,32 @@ border: 1px solid rgba(255, 255, 255, 0.47);
 .scrollable-container::-webkit-scrollbar-thumb {
   background-color: gray; /* Set the thumb color to be transparent */
 }
+
+.content {
+  @apply grid md:grid-cols-2 my-12 max-w-7xl mx-auto gap-x-12 px-3
+}
+
+.content h2{
+  @apply text-2xl sm:text-3xl md:text-4xl font-bold my-5 text-primary
+}
+
+
+.content h3{
+  @apply  text-xl sm:text-xl md:text-2xl font-semibold my-3 text-gray-700
+}
+
+.content h4 {
+  @apply text-lg md:text-xl font-semibold my-2 text-gray-700
+}
+
+.content p {
+  @apply text-sm 
+}
+
+.content ul{ 
+  @apply text-sm my-2 list-disc pl-5
+}
+
+.content ul li {
+  @apply my-1
+}

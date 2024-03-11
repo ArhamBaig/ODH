@@ -3,8 +3,7 @@ import Slider from "react-slick";
 import Image from "next/image";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Star,ChevronRight,ChevronLeft } from "lucide-react";
-import { v4 as uuidv4 } from "uuid";
+import { Star, CircleUserRound } from "lucide-react";
 const Reviews = () => {
     function SampleNextArrow(props) {
         const { className, style, onClick } = props;
@@ -34,12 +33,13 @@ const Reviews = () => {
     speed: 300,
     cssEase: "linear",
     nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />
+    prevArrow: <SamplePrevArrow />,
+    fade: true,
     };
 
     
   return (
-    <div className="container mx-auto py-16">
+    <div className="container mx-auto py-16 px-2">
       <h3 className="font-bold text-2xl sm:text-3xl md:text-4xl capitalize text-primary max-w-4xl text-center lg:text-left">
         Here&apos;s What <span className="text-siteorange">Our Clients</span>{" "}
         think of our dissertation writing services
@@ -90,21 +90,17 @@ const Reviews = () => {
 const ReviewCard = ({ id, heading, review }) => {
   return (
     <div className="p-5 border-2 border-primary rounded-3xl flex flex-col md:flex-row mx-3 justify-center items-center">
-      <Image
-        src={"/assets/review-profile.svg"}
-        width={100}
-        height={100}
-        alt="review profile icon"
-        className="hidden md:block w-[100px] md:w-[300px]"
-      />
-      <div className="flex flex-col justify-center items-center">
+      <div className="w-[150px]">
+     <CircleUserRound className="w-36 h-36 text-primary" />
+     </div>
+      <div className="flex flex-col justify-center items-center md:items-start">
         <p className="text-sm italic">{id}</p>
         <div className="flex">
-          <Star />
-          <Star />
-          <Star />
-          <Star />
-          <Star />
+          <Star className="text-yellow-500" fill="rgb(234 179 8)" />
+          <Star className="text-yellow-500" fill="rgb(234 179 8)" />
+          <Star className="text-yellow-500" fill="rgb(234 179 8)" />
+          <Star className="text-yellow-500" fill="rgb(234 179 8)" />
+          <Star className="text-yellow-500" fill="rgb(234 179 8)" />
         </div>
         <p className="text-xl font-bold text-primary text-center md:text-left ">{heading}</p>
         <p className="text-gray-800 text-center md:text-left text-sm">{review}</p>

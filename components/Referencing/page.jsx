@@ -1,14 +1,16 @@
-import Image from "next/image"
+import Image from "next/image";
 
 const Referencing = () => {
   return (
     <>
-      <h2 className="heading capitalize mx-auto mb-16 mt-20">How we proceed with your dissertation?</h2>
-    <div className="flex justify-center gap-x-36 items-center w-full mx-auto px-12 lg:px-0">
-    <div className="home-content scrollable-container border border-dotted border-siteorange p-4 bg-gradient-to-b from-tertiary/20 from-20% to-white">
+      <h2 className="heading capitalize mx-auto mb-16 mt-20">
+        How we proceed with your dissertation?
+      </h2>
+      <div className="flex justify-center gap-x-36 items-center w-full mx-auto px-12 lg:px-0">
+        <div className="home-content scrollable-container border border-dotted border-siteorange p-4 bg-gradient-to-b from-tertiary/20 from-20% to-white">
           <div className="px-2">
             <div className="text-sm">
-                <h3 className="text-3xl font-bold">Referencing Style</h3>
+              <h3 className="text-3xl font-bold">Referencing Style</h3>
               <p>
                 Feeling overwhelmed by the academic grind? Wondering if there's
                 a way to make the never-ending report assignments and essays
@@ -19,8 +21,9 @@ const Referencing = () => {
                 see below what miraculous moves we set forth to your service!
               </p>
 
-              
-              <h3 className="text-3xl font-bold">Lorem Ipsum <span className="text-primary">Dolor</span> Sit</h3>
+              <h3 className="text-3xl font-bold">
+                Lorem Ipsum <span className="text-primary">Dolor</span> Sit
+              </h3>
 
               <ul className="list-disc">
                 <li>
@@ -126,28 +129,24 @@ const Referencing = () => {
                 Let's Talk for A While Exclusively About Our Report Writing Help
                 Services!
               </h3>
-              <p> Report writing holds a pivotal role in academic and professional
-                spheres. </p>
-              
+              <p>
+                {" "}
+                Report writing holds a pivotal role in academic and professional
+                spheres.{" "}
+              </p>
             </div>
-           
           </div>
         </div>
         <Image
-        src={"/assets/referencing_image.png"} 
-        width={470}
-        height={700}
-        alt="content image"
-        className="hidden xl:block"
+          src={"/assets/referencing_image.png"}
+          width={470}
+          height={700}
+          alt="content image"
+          className="hidden xl:block"
         />
-
-    </div>
-    
-        
-
-
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default Referencing
+export default Referencing;
