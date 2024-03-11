@@ -34,9 +34,9 @@ const ContentPage = async (props) => {
   }
   
   return (
-   <>
-   {content}
-   </>
+    <>
+      {content}
+    </>
   );
 };
 
