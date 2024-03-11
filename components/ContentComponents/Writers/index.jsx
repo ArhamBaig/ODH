@@ -181,7 +181,7 @@ const WriterCard = ({
           );
         })}
       </div>
-      <button className="w-full py-3 button-hover-transition rounded-xl text-black delay-100 border border-primary transition-all hover:text-white">
+      <button className="w-full py-3 rounded-xl  text-black delay-100 border border-primary transition-all hover:text-white">
         Hire Writer
       </button>
     </div>
