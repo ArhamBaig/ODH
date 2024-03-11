@@ -1,8 +1,14 @@
+import ContentHero from "@/components/ContentComponents/ContentHero";
+import Reviews from "@/components/ContentComponents/Reviews";
 import React from "react";
 
 const transcriptionServices = () => {
   return (
     <>
+    <ContentHero heading={<>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, rerum!</>} 
+      desc={<>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, ipsa. Quibusdam maxime fugit praesentium quis accusantium. Quia asperiores, sit provident dolorum assumenda nulla atque vitae. Natus repudiandae, nulla quo, repellendus porro fugiat inventore unde architecto et minus consectetur. Doloremque quas, explicabo doloribus qui repellendus inventore facere iure ullam dolor ipsa.</>}
+    />
+    <Reviews />
       <div>
         <h1>The Most Appropriate Transcription Services</h1>
         <p>

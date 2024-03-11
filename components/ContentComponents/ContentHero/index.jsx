@@ -1,7 +1,7 @@
 import HeroForm from '@/components/Hero/HeroForm'
 import React from 'react'
 
-const ContentComponent = ({heading, desc}) => {
+const ContentHero = ({heading, desc}) => {
   return (
     <div className="flex flex-col lg:flex-row pt-44 pb-16 lg:pb-24 bg-gradient-radial from-tertiary to-primary px-3 sm:px-10 md:px-16 2xl:px-36 justify-center items-center gap-x-4">
     <div className="max-w-3xl  text-center lg:text-left">
@@ -24,4 +24,4 @@ const ContentComponent = ({heading, desc}) => {
   )
 }
 
-export default ContentComponent
+export default ContentHero

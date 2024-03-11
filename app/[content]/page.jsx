@@ -34,14 +34,9 @@ const ContentPage = async (props) => {
   }
   
   return (
-    <div className="">
-    <ServiceHero />
-    <DissertationTopicList />
-    <CustomDissertationTopic />
-    <StatCounter />
-    <TopicContent content={content} />
-    <Banner />
-    </div>
+   <>
+   {content}
+   </>
   );
 };
 
