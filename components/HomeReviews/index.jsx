@@ -14,10 +14,10 @@ const HomeReviews = () => {
         />
         <p className="font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-4">4.9/5 REVIEWS</p>
         <p className="text-center text-base sm:text-lg">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus sed
-          inventore enim officiis odio ea, fuga ad sapiente voluptatem esse
-          consectetur iste neque obcaecati deleniti quos velit cupiditate cum
-          minus.
+        We believe in letting our customers&#39; experiences speak for themselves. Their honest feedback reflects
+our commitment to delivering exceptional assistance and ensuring client satisfaction. We invite you to
+
+browse their experiences and gain insights into the level of service we provide.
         </p>
       </div>
     </div>

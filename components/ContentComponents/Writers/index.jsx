@@ -147,7 +147,7 @@ const WriterCard = ({
             />
             <span className="font-light text-sm">{`(${ratingCount})`}</span>
           </p>
-          <p className="flex justify-center items-center text-xs bg-rose-50 rounded-full w-fit px-2 py-[2px]">
+          <p className="flex justify-center items-center text-xs bg-primary/10 rounded-full w-fit px-2 py-[2px]">
             <Circle
               className="h-[14px] w-[14px] mr-1 text-green-600"
               fill="rgb(22 163 74)"
@@ -158,14 +158,14 @@ const WriterCard = ({
       </div>
       <div className="grid sm:grid-cols-2 gap-y-2 gap-x-4 border-b-2 pb-4 w-full">
         <div className="flex gap-x-2 sm:justify-center sm:items-center">
-          <GraduationCap className="w-14 h-14 bg-rose-50 p-2 rounded-3xl text-primary " />
+          <GraduationCap className="w-14 h-14 bg-primary/10 p-2 rounded-3xl text-primary " />
           <div className="flex flex-col">
             <p className="font-bold text-xl">{degree}</p>
             <p className="text-gray-600 text-sm">degree</p>
           </div>
         </div>
         <div className="flex gap-x-2 sm:justify-center sm:items-center">
-          <BookA className="w-14 h-14 bg-rose-50 p-2 rounded-3xl text-primary " />
+          <BookA className="w-14 h-14 bg-primary/10 p-2 rounded-3xl text-primary " />
           <div className="flex flex-col">
             <p className="font-bold text-xl">{orders}</p>
             <p className="text-gray-600 text-sm">orders</p>
@@ -175,7 +175,7 @@ const WriterCard = ({
       <div className="sm:flex flex-wrap text-xs gap-x-1 hidden">
         {specialization.map((course, index) => {
           return (
-            <p key={index} className="bg-rose-50 p-1 rounded-full px-2">
+            <p key={index} className="bg-primary/10 p-1 rounded-full px-2">
               {course}
             </p>
           );

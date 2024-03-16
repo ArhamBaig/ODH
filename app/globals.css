@@ -92,16 +92,35 @@ border: 1px solid rgba(255, 255, 255, 0.47);
 
   .heading {
     
-    @apply relative z-10  text-center w-[60vw] lg:w-[80%] font-bold text-2xl lg:text-4xl uppercase mx-auto 
+    @apply relative z-10  text-center w-[90vw] lg:w-[80%] font-bold text-2xl lg:text-4xl uppercase mx-auto 
 }
 
 :root {
-    --cards:5;
+    --cards:8;
     --cardTopPadding:4em;
     --cardMargin:1vw;
 
 }
 
+.scrollbar-component {
+  overflow-y: auto;
+  height: 100px; /* Adjust the height as needed */
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+.scrollbar-component::-webkit-scrollbar {
+  width: 6px; /* Adjust the scrollbar width as needed */
+}
+
+.scrollbar-component::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 5px; /* Adjust the scrollbar thumb radius as needed */
+}
+
+.scrollbar-component:hover::-webkit-scrollbar-thumb {
+  background-color: #414141; /* Adjust the scrollbar thumb color as needed */
+}
 .cards {
 	list-style: none;
 	padding-left: 0;
@@ -128,6 +147,12 @@ border: 1px solid rgba(255, 255, 255, 0.47);
 #card5 {
 	--index: 5;
 }
+#card6 {
+	--index: 6;
+}
+#card7 {
+	--index: 7;
+}
 
 .card {
 	position: sticky;
@@ -149,6 +174,12 @@ border: 1px solid rgba(255, 255, 255, 0.47);
 	background-color: #013947;
 }
 #card5 .card-body {
+	background-color: #013947;
+}
+#card6 .card-body {
+	background-color: #013947;
+}
+#card7 .card-body {
 	background-color: #013947;
 }
 
@@ -231,4 +262,20 @@ border: 1px solid rgba(255, 255, 255, 0.47);
 
 .content ul li {
   @apply my-1
+}
+
+
+.home-content {
+  @apply my-2
+}
+
+.home-content h3 {
+  @apply text-2xl font-bold my-2 text-primary
+}
+
+.home-content ul {
+  @apply ml-4 list-disc
+}
+.home-content p {
+  @apply text-sm sm:text-base
 }

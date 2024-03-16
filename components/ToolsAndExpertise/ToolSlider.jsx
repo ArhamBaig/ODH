@@ -16,6 +16,14 @@ const ToolSlider = () => {
         arrows: false,
         draggable: false,
         pauseOnHover: false
+        ,responsive: [
+          {
+            breakpoint: '640px',
+            settings: {
+              slidesToShow: 2
+            }
+          }
+        ]
       };
 
   return (

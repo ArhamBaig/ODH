@@ -13,12 +13,53 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Star } from "lucide-react";
 export const AnimatedTooltip = ({ items }) => {
+  function SampleNextArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{
+          ...style,
+          background: "#075264",
+          borderRadius: "9999px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          width: "25px",
+          height: "25px",
+        }}
+        onClick={onClick}
+      />
+    );
+  }
+
+  function SamplePrevArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <div
+        className={className}
+        style={{
+          ...style,
+          background: "#075264",
+          borderRadius: "9999px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          width: "25px",
+          height: "25px",
+        }}
+        onClick={onClick}
+      />
+    );
+  }
   const settings = {
    
     slidesToShow: 3,
     slidesToScroll: 1,
     speed: 100,
     cssEase: "linear",
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
     responsive: [
       {
         breakpoint: 1280,
@@ -86,11 +127,11 @@ export const AnimatedTooltip = ({ items }) => {
                       translateX: translateX,
                       rotate: rotate,
                       whiteSpace: "nowrap",
-                    }}
-                    className="absolute top-12 left-[100px] lg:left-[135px] xl:left-[125px] 2xl:left-[156px] translate-x-1/2 flex text-xs  flex-col items-center justify-center rounded-md bg-black z-20 shadow-xl px-4 py-2 w-[145px]"
+                    }}  
+                    className="absolute top-12 left-[100px] lg:left-[135px] xl:left-[125px] 2xl:left-[156px] translate-x-1/2 flex text-xs  flex-col items-center justify-center rounded-md bg-black z-20 shadow-xl px-4 py-2 w-[165px]"
                   >
-                    <div className="absolute inset-x-10 z-30 w-[20%] -bottom-px bg-gradient-to-r from-transparent via-emerald-500 to-transparent h-px " />
-                    <div className="absolute left-10 w-[40%] z-30 -bottom-px bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px " />
+                    <div className="absolute inset-x-10 z-30 w-[20%] -bottom-px bg-gradient-to-r from-transparent via-siteorange to-transparent h-px " />
+                    <div className="absolute left-10 w-[40%] z-30 -bottom-px bg-gradient-to-r from-transparent via-siteorange to-transparent h-px " />
                     <div className="font-bold text-white relative z-30 text-base">
                       {item.name}
                     </div>
@@ -98,17 +139,15 @@ export const AnimatedTooltip = ({ items }) => {
                   </motion.div>
                 )}
               </AnimatePresence>
-              <div className="rounded-3xl p-4 flex flex-col justify-end items-center mx-auto w-[270px] sm:w-[300px] lg:w-[350px] 2xl:w-[400px] h-[300px] mt-44 border  border-black">
-                <div className="absolute top-24 lg:top-28 w-[130px] h-[130px]">
+              <div className="rounded-3xl p-4 flex flex-col justify-between items-center mx-auto w-[270px] sm:w-[300px] lg:w-[350px] 2xl:w-[400px] h-[440px] lg:h-[400px] mt-44 border border-black">
                   <Image
                     src={item.image}
                     alt={item.name}
                     width={130}
                     height={130}
-                    className=" rounded-full border-2 border-white"
+                    className=" rounded-full border-2 border-white -mt-24 "
                     onMouseMove={handleMouseMove}
                   />
-                </div>
                 <div className="flex gap-x-1 mt-4">
                   <Star className="text-secondary" fill="#f9cb50" />
                   <Star className="text-secondary" fill="#f9cb50" />
@@ -116,11 +155,8 @@ export const AnimatedTooltip = ({ items }) => {
                   <Star className="text-secondary" fill="#f9cb50" />
                   <Star className="text-secondary" fill="#f9cb50" />
                 </div>
-                <p className="text-center leading-tight mt-3 text-sm">
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet
-                  voluptatem neque ab laboriosam impedit! Atque ipsa quaerat
-                  iusto provident tenetur quis quam enim, explicabo, saepe,
-                  porro maiores ratione eveniet architecto.
+                <p className="text-center leading-4 sm:leading-tight mt-3 text-sm">
+                  {item.desc}
                 </p>
                 <button className="border border-gray-700 hover:bg-secondary text-gray-800 px-4 p-3 mt-4 rounded-xl transition-all">
                   Live Chat
