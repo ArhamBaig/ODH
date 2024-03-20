@@ -236,7 +236,7 @@ border: 1px solid rgba(255, 255, 255, 0.47);
 }
 
 .content {
-  @apply grid md:grid-cols-2 my-12 max-w-7xl mx-auto gap-x-12 px-3
+  @apply  my-12 px-3 max-w-7xl mx-auto
 }
 
 .content h2{
@@ -278,4 +278,8 @@ border: 1px solid rgba(255, 255, 255, 0.47);
 }
 .home-content p {
   @apply text-sm sm:text-base
+}
+
+.quote {
+  @apply text-center text-primary font-semibold mt-5 mx-4
 }

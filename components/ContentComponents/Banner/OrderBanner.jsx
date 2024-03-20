@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-const ServiceContentBanner = () => {
+const OrderBanner = () => {
   return (
     <div className=" bg-primary p-4 flex flex-col justify-center items-center py-14 space-y-7">
       <p className="text-white font-bold text-2xl sm:text-3xl md:text-5xl uppercase text-center">
@@ -39,4 +39,4 @@ const ServiceContentBanner = () => {
   );
 };
 
-export default ServiceContentBanner;
+export default OrderBanner;

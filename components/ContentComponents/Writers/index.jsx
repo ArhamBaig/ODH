@@ -54,19 +54,19 @@ const Writers = ({ experts }) => {
     prevArrow: <SamplePrevArrow />,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1280,
         settings: {
           slidesToShow: 3,
         },
       },
       {
-        breakpoint: 768,
+        breakpoint: 1024,
         settings: {
           slidesToShow: 2,
         },
       },
       {
-        breakpoint: 640,
+        breakpoint: 700,
         settings: {
           slidesToShow: 1,
         },
@@ -97,7 +97,7 @@ const Writers = ({ experts }) => {
                 name={expert.name}
                 ratingCount={expert.ratingCount}
                 degree={expert.degree}
-                orders={expert.degree}
+                orders={expert.orders}
                 specialization={expert.specialization}
               />
             );
@@ -118,7 +118,7 @@ const WriterCard = ({
   specialization,
 }) => {
   return (
-    <div className="border border-gray-200 rounded-2xl flex flex-col lg:max-w-none lg:basis-1/2 xl:basis-1/3 px-4 shadow-lg  h-[450px] sm:h-[350px]  items-center justify-center select-none my-10 mb-4 gap-y-4 p-4 mx-2">
+    <div className="border border-gray-200 rounded-2xl flex flex-col px-4 shadow-lg max-w-[386px] h-[450px] sm:h-[350px]  items-center justify-center select-none my-10 mb-4 gap-y-4 p-4 mx-2">
       <div className="rounded-full flex flex-col sm:flex-row justify-center items-center gap-x-4">
         <Image src={image} alt={alt} width={100} height={100} />
         <div className="flex flex-col justify-center items-center sm:justify-start sm:items-start gap-y-1">
@@ -156,16 +156,16 @@ const WriterCard = ({
           </p>
         </div>
       </div>
-      <div className="grid sm:grid-cols-2 gap-y-2 gap-x-4 border-b-2 pb-4 w-full">
+      <div className="grid sm:grid-cols-2 gap-y-2 gap-x-4 border-b-2 pb-4 w-full justify-center items-center">
         <div className="flex gap-x-2 sm:justify-center sm:items-center">
-          <GraduationCap className="w-14 h-14 bg-primary/10 p-2 rounded-3xl text-primary " />
+          <GraduationCap className="w-[47px] h-[47px] bg-primary/10 p-[6px] rounded-3xl text-primary flex-shrink-0" />
           <div className="flex flex-col">
             <p className="font-bold text-xl">{degree}</p>
             <p className="text-gray-600 text-sm">degree</p>
           </div>
         </div>
         <div className="flex gap-x-2 sm:justify-center sm:items-center">
-          <BookA className="w-14 h-14 bg-primary/10 p-2 rounded-3xl text-primary " />
+          <BookA className="w-[47px] h-[47px] bg-primary/10 p-[6px] rounded-3xl text-primary " />
           <div className="flex flex-col">
             <p className="font-bold text-xl">{orders}</p>
             <p className="text-gray-600 text-sm">orders</p>
