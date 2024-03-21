@@ -14,7 +14,7 @@ const DissertationTopic = () => {
       <CustomDissertationTopic />
       <StatCounter />
       <TopicContent  />
-      <Banner />
+      {/* <Banner /> */}
     </div>
   );
 };

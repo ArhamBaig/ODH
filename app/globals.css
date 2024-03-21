@@ -269,15 +269,19 @@ border: 1px solid rgba(255, 255, 255, 0.47);
   @apply my-2
 }
 
+.home-content h2{
+  @apply text-3xl font-bold my-3 text-primary
+}
+
 .home-content h3 {
-  @apply text-2xl font-bold my-2 text-primary
+  @apply text-2xl font-bold my-2 text-tertiary
 }
 
 .home-content ul {
   @apply ml-4 list-disc
 }
 .home-content p {
-  @apply text-sm sm:text-base
+  @apply text-sm sm:text-base my-1
 }
 
 .quote {

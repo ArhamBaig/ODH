@@ -6,27 +6,20 @@ const CustomDissertationTopic = () => {
   return (
     <div className="py-16 flex flex-col justify-center items-center bg-gradient-radial from-gray-200 to-gray-100">
       <h2 className="text-5xl font-bold heading mb-12">
-        Lorem ipsum dolor sit amet consectetur adipisicing.
-      </h2>
+      A Collection of Stimulating Ideas - An Extensive List
+of Dissertation Topics!      </h2>
       <p className="text-gray-800 max-w-6xl my-3 text-center">
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum, atque
-        sunt? Blanditiis quis distinctio similique numquam quasi in tenetur
-        quaerat obcaecati eum tempora temporibus architecto officia libero
-        dolore ratione voluptate deleniti, consectetur earum maiores ab
-        praesentium nulla ipsa totam accusamus! Sint vero, laborum distinctio a
-        velit quas amet neque dolorum repellendus cum, impedit recusandae nihil
-        porro ipsum at voluptate incidunt, facilis totam et error ab? Quidem
-        modi vitae dolore dolorem accusantium deserunt tenetur debitis odit in.
-        Odio dolores praesentium excepturi nostrum, animi facilis officiis
-        necessitatibus doloribus id quam nulla quas quibusdam voluptatibus
-        tempore vitae eum soluta magni corporis sit voluptas.
+      We understand that you&#39;re likely here in search of instant dissertation ideas, and you&#39;re in the right
+place. Consider your needs taken care of! Our team recognises the importance of sparking inspiration
+promptly, especially when time is of the essence in the academic world. Whether you&#39;re seeking a
+starting point or a refined idea, we aim to provide the catalyst for your research objectives.
       </p>
       <p className="text-gray-800 max-w-6xl text-center">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Error similique
-        molestias, consequuntur ratione rerum aut at quod laudantium atque
-        numquam quia sequi possimus quasi cupiditate, voluptates consectetur.
-        Quibusdam quod quaerat eligendi et veritatis quos, vero porro, itaque
-        unde excepturi cumque.
+      Now, here&#39;s the initial yet comprehensive list of the latest dissertation topics. Step forward and explore;
+perhaps you&#39;ll find the perfect match for your research goals. If you crave further discussion or insights
+about a particular topic on the list, don&#39;t hesitate to consult us through our user-friendly chatbot. Your
+topic hunt begins now—find the one that resonates with you and sets the stage for your academic
+success!
       </p>
 
       <div className="grid xl:grid-cols-2 gap-x-12 mt-10 gap-y-10 ">
