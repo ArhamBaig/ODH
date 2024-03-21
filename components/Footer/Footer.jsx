@@ -4,8 +4,8 @@ import Link from "next/link"
 
 const Footer = () => {
   return (
-    <div className="bg-primary flex flex-col justify-center gap-x-24  items-center py-10">
-      <div className="flex flex-col gap-y-5  px-2 py-10 ">
+    <div className="bg-primary flex flex-col xl:flex-row justify-center items-center py-10 ">
+      <div className="flex flex-col  gap-y-5  px-2 xl:px-6 py-6 border-b xl:border-r xl:border-b-0">
         <Image
           alt="Online Dissertation Help logo"
           src={"/assets/footer-logo.png"}
@@ -13,8 +13,8 @@ const Footer = () => {
           width={300}
           className="mx-auto"
         />
-        <div className="flex text-white gap-x-1 text-sm">
-          <MapPin className="size-8"/>
+        <div className="flex text-white gap-x-3 text-sm">
+          <MapPin className="size-6"/>
           <p>London 71-75 Shelton St, London WC2H 9JQ, United Kingdom</p>
         </div>
         <div className="flex text-white gap-x-3 ">
@@ -26,27 +26,24 @@ const Footer = () => {
           <p>+44 7456 380326</p>
         </div>
       </div>
-      <div className="flex justify-center gap-x-6 px-2 w-full">
+      <div className="flex justify-center gap-x-4 px-2 xl:px-6 w-full xl:w-auto py-6">
         <div className="flex flex-col">
           <p className="font-bold text-lg text-white mb-2">Useful Links</p>
-          <ul className="text-white font-light text-sm space-y-1">
-            <Link><li>Home</li></Link>
-            <li>Topics</li>
-            <li>Order</li>
-            <li>Contact</li>
-          </ul>
+          <div className="text-white font-light text-sm space-y-1 flex flex-col">
+            <Link className="hover:underline underline-offset-2" href={"/"}>Home</Link>
+            <Link className="hover:underline underline-offset-2" href={"/custom-dissertation-topics"}>Topics</Link>
+            <Link className="hover:underline underline-offset-2" href={"#"}>Order</Link>
+            <Link className="hover:underline underline-offset-2" href={"/contact"}>Contact</Link>
+          </div>
         </div>
         <div className="flex flex-col">
           <p className="font-bold text-lg text-white mb-2">Dissertation Topics</p>
-          <ul className="text-white font-light text-sm space-y-1">
-            <li>Accounting Dissertation</li>
-            <li>Business Dissertation</li>
-            <li>Change Management Dissertation</li>
-            <li>Marketing Dissertation</li>
-            <li>Nursing Dissertation</li>
-            <li></li>
-          </ul>
-         
+          <div className="text-white font-light text-sm space-y-1 flex flex-col">
+            <Link className="hover:underline underline-offset-2" href={"/accounting-dissertion-topics"}>Accounting Dissertation</Link>
+            <Link className="hover:underline underline-offset-2" href={"/business-dissertion-topics"}>Business Dissertation</Link>
+            <Link className="hover:underline underline-offset-2" href={"/marketing-dissertion"}>Marketing Dissertation</Link>
+            <Link className="hover:underline underline-offset-2" href={"/nursing-dissertion-topics"}>Nursing Dissertation</Link>
+          </div>
         </div>
       </div>
       <div className="flex flex-col gap-y-5">
