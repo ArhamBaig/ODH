@@ -18,7 +18,7 @@ const DissertationTopicList = () => {
         dissertation venture. The major considerations we undertake are as
         follows.
       </p>
-      <TopicList />
+      {/* <TopicList /> */}
     </div>
   );
 };
