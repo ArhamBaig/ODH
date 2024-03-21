@@ -231,9 +231,9 @@ export const contentData = [
         },
       },
     {
-        slug: "marketing-dissertation",
+        slug: "marketing-dissertation-topics",
         serviceName: "Marketing Dissertation ",
-        path: "/marketing-dissertation",
+        path: "/marketing-dissertation-topics",
         title: "Custom Marketing Dissertation Topics 2023 by London's Top Experts",
         description:
         "Need help choosing the marketing dissertation topics? Get the best Marketing Dissertation Topics 2023 from Subject Experts in London.",
@@ -241,7 +241,7 @@ export const contentData = [
         isoDate: new Date("03/21/2024").toISOString(),
         alternates: {
           canonical:
-            "https://onlinedissertationhelp.com/marketing-dissertation",
+            "https://onlinedissertationhelp.com/marketing-dissertation-topics",
         },
         openGraph: {
           title: "Custom Marketing Dissertation Topics 2023 by London's Top Experts",
@@ -252,7 +252,7 @@ export const contentData = [
           publishedTime: new Date("03/21/2024").toISOString(),
           authors: "Admin",
           site_name: "Online Dissertation Help",
-          url: "https://onlinedissertationhelp.com/marketing-dissertation",
+          url: "https://onlinedissertationhelp.com/marketing-dissertation-topics",
           images: [
             {
               url: "https://onlinedissertationhelp.com/assets/logo.png",

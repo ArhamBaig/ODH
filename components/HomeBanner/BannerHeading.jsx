@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { LampContainer } from "../ui/lamp";
 import Image from 'next/image'
+import Link from "next/link";
 const BannerHeading = () => {
   return (
     <LampContainer className={"relative "}>
@@ -29,9 +30,9 @@ const BannerHeading = () => {
         <Image src={"/assets/Visa-logo.png"} width={100} height={90} alt="mastercard payment method" className="w-[70px] sm:w-[100px]"/>
         <Image src={"/assets/wise-logo.png"} width={100} height={90} alt="mastercard payment method" className="w-[70px] sm:w-[100px]"/>
       </div>
-    <button className=" inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#013947,45%,#075264,55%,#013947)] bg-[length:200%_100%] px-6 font-medium text-slate-200 transition-colors focus:outline-none">
+    <Link href={"/order"} className=" inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#013947,45%,#075264,55%,#013947)] bg-[length:200%_100%] px-6 font-medium text-slate-200 transition-colors focus:outline-none">
           Order Now
-        </button>
+        </Link>
         </div>
   </LampContainer>
   )
